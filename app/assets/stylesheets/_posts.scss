@@ -6,6 +6,11 @@
   width: 100vw;
   height: 50px;
   background-color: skyblue;
+  .fas {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 10px 0 0;
+  }
 }
 
 .main {
