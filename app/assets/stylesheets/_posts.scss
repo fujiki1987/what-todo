@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100vw;
+  height: 50px;
+  background-color: skyblue;
+}
+
+.main {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  background-color: #CCFFFF;
+  display: flex;
+  .side_menu {
+    width: 200px;
+    background-color: #CCFFFF;
+    padding: 10px;
+    .side_header {
+      height: 50px;
+      .logo {
+        padding: 10px;
+      }
+      h1 {
+      }
+    }
+    .side_lists {
+      padding-top: 30px;
+      &__ul {
+        &__li {
+
+        }
+      }
+    }
+  }
+
+  .tasks {
+    width: calc(100vw - 200px);
+    display: flex;
+    .task_main {
+      width: 50%;
+      border: 1px solid gray;
+      border-radius: 1%;
+      margin-top: 10px;
+      margin-left: 5px;
+      background-color: #FFFFF0	;
+      .main_header {
+        height: 50px;
+        ul {
+          display: flex;
+          justify-content: flex-end;
+          padding-top: 20px;
+          li {
+            padding: 0 3px;
+          }
+        }
+      }
+      .task_add {
+        height: 100px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        .text_field {
+          width: 100%;
+        }
+        .add-button {
+        }
+      }
+      .task_lists {
+        padding: 0 20px;
+        .task_list {
+          ul {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #EEEEEE;
+            li {
+            }
+          }
+        }
+      }
+    }
+    .task_detail {
+      width: 50%;
+      border: 1px solid gray;
+      border-radius: 1%;
+      margin-top: 10px;
+      margin-right: 10px;
+      background-color: #FFFFF0	;
+      .detail_header {
+        height: 100px;
+        margin: 30px;
+        h1 {
+          font-size: 20px;
+        }
+        ul {
+          display: flex;
+          li {
+            margin: 10px 10px 0 0;
+            font-size: 13px;
+          }
+        }
+      }
+      .detail_main {
+        margin: 30px;
+        h1 {
+
+        }
+        .notes {
+          display: flex;
+          .note_field {
+            width: 100%;
+          }
+          .save_button {
+
+          }
+        }
+        p {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
