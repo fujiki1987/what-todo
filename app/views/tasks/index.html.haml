@@ -1,0 +1,41 @@
+.header
+  .header_user_name
+    = current_user.name
+  .header_icon
+    = link_to edit_user_path(current_user) do
+      %i.fas.fa-cog
+
+
+.main
+  .side_menu
+    .side_header
+      = image_tag 'f_f_object_174_s64_f_object_174_0nbg.png', class: 'icon'
+      %h1.header_name WhatTodo
+    .side_lists
+      %ul
+        %li 今日
+        %li 明日
+        %li 今週
+
+  .tasks
+    .task_main
+      .main_header
+        %ul
+          %li 完了
+          %li 未完了
+          %li
+            %i.fas.fa-cog
+
+      = render "form"
+
+      .task_lists
+        - @tasks.each do |task|
+          .task_list  
+            .task_name
+              %label
+                %input{type: "radio", class:"name", "data-id":'task_name'}
+                  = task.task_name
+            .end_date
+              = task.end_date
+              
+    = render "note"

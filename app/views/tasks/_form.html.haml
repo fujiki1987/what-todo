@@ -1,0 +1,28 @@
+= form_with url: "/tasks", method: :post, local: true do |form|
+  .task_add
+    = form.text_field :task_name, placeholder: "タスクの追加", class: 'task'
+    .container
+      .row
+        .col-sm-6
+          .form-group
+            #datetimepicker.input-group.date{"data-target-input" => "nearest"}
+              = form.text_field :end_date, class: "form-control datetimepicker-input", date: {target: "#datetimepicker"}
+              .input-group-append{"data-target" => "#datetimepicker", "data-toggle" => "datetimepicker"}
+                .input-group-text
+                  %i.fa.fa-calendar
+      %script{:crossorigin => "anonymous", :integrity => "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", :src => "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
+      %script{:crossorigin => "anonymous", :integrity => "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"}
+      %script{:crossorigin => "anonymous", :integrity => "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM", :src => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/ja.js"}
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"}
+      :javascript
+        $(function () {
+          $('#datetimepicker').datetimepicker({
+            local: 'ja'
+            dayViewHeaderFormat: 'YYYY年 M月',
+            format: 'YYYY/MM/DD',
+            showClose: true
+          });
+        });
+      = form.submit "追加", class: "add_button"

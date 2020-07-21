@@ -1,0 +1,24 @@
+.task_detail
+  .detail_header
+    .task_name
+      %p#selected 選択してください
+      :javascript
+        $('.name').on('click', function() {
+          var click = $(this).data('id');
+          $('#selected').text(click);
+        });
+          
+      .task_date
+        %ul
+          %li 期限
+          %li 2020/07/13
+    .detail_main
+      %h1 ノート
+      .notes
+        = form_with url: "/tasks", method: :post, local: true do |form|
+          .note_add
+            = form.text_field :note, placeholder: "MEMO", class: "note"
+            = form.submit "保存", class: "save_button"
+      .note_lists
+        .note_list  
+          .note_name

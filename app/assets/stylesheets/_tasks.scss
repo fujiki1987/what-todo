@@ -6,11 +6,9 @@
   width: 100vw;
   height: 50px;
   background-color: skyblue;
-  .fas {
-    display: flex;
-    justify-content: flex-end;
-    padding: 15px 10px 0 0;
-  }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .main {
@@ -23,15 +21,16 @@
     background-color: #CCFFFF;
     padding: 10px;
     .side_header {
-      height: 50px;
-      .logo {
-        padding: 10px;
-      }
-      h1 {
+      margin-top: 5px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      .header_name{
+        font-size: 20px;
       }
     }
     .side_lists {
-      padding-top: 30px;
+      padding-top: 50px;
       &__ul {
         &__li {
 
@@ -64,23 +63,19 @@
       .task_add {
         height: 100px;
         padding: 0 20px;
-        display: flex;
-        align-items: center;
-        .text_field {
+        .task {
           width: 100%;
-        }
-        .add-button {
+          
         }
       }
+      
       .task_lists {
-        padding: 0 20px;
+        padding: 0 20px;          
         .task_list {
-          ul {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #EEEEEE;
-            li {
-            }
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #EEEEEE;
+          .task_name {
           }
         }
       }
@@ -109,11 +104,11 @@
       .detail_main {
         margin: 30px;
         h1 {
-
+          font-size: 20px;
         }
-        .notes {
+        .note_add {
           display: flex;
-          .note_field {
+          .note {
             width: 100%;
           }
           .save_button {
@@ -128,3 +123,49 @@
   }
 }
 
+.svg-inline--fa {
+  margin: 0 10px;
+  color: black;
+}
+
+.icon {
+  height: 80px;
+}
+
+.add_button {
+  height: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .row {
+    .col-sm-6 {
+      width: 400PX;
+    }
+  }
+}
+
+.datepicker-days th.dow:first-child,
+          .datepicker-days td:first-child {
+              color: #f00;
+          }
+          .datepicker-days th.dow:last-child,
+          .datepicker-days td:last-child {
+              color: #00f;
+          }
+
+          .bootstrap-datetimepicker-widget table td.active,
+          .bootstrap-datetimepicker-widget table td.active:hover {
+            background-color: #337ab7;
+            color: #fff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+          }
+
+          .bootstrap-datetimepicker-widget table td span.active,
+          .bootstrap-datetimepicker-widget table td i.active {
+            background-color: #337ab7;
+            color: #fff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+          }
